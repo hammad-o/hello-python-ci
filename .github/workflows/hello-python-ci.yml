@@ -22,7 +22,7 @@ jobs:
               working-directory: docker/python
               run: |
                 python -m pip install --upgrade pip
-                pip instal -r requirements.txt
+                pip install -r requirements.txt
 
             - name: Run Smoke Test
               working-directory: docker/python
@@ -51,4 +51,5 @@ jobs:
                 context: docker/python
                 push: true
                 tags: |
+                    ${{ secrets.DOCKER_USERNAME }}/hello-python:latest
 
